@@ -29,6 +29,36 @@
         top: 50%;
         transform: translate(-50%, -50%); /* % of current element */
       }
+
+      #continue-to-site {
+        position: fixed;
+        bottom: 48px;
+        left: 50%;
+        margin-left: -131px;
+        width: 256px;
+        color: #FFF;
+        border: 3px solid #FFF;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 16px;
+        padding: 16px 0;
+        cursor: pointer;
+        z-index: 1;
+        text-align: center;
+        font-weight: bold;
+        font-family: system-ui;
+        background: rgba(0, 0, 0, 0.32);
+        box-shadow: rgb(0 0 0 / 32%) 0 0 48px 16px;
+        border-radius: 3px;
+        transition: all 0.2s, opacity 1.0s;
+        opacity: 0;
+      }
+
+      #continue-to-site:hover {
+        transform: scale(1.05);
+        background: rgba(0, 0, 0, 0.64);
+        box-shadow: rgb(0 0 0 / 64%) 0 0 96px 16px;
+      }
     </style>
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -46,8 +76,18 @@
     </script>
   </head>
   <body>
+    <div id="continue-to-site">Continue to site</div>
     <div class="video-container">
       <video autoplay loop muted playsinline src="https://storage.googleapis.com/campgeorvin/DriveThroughTheRedwoods.mp4"></video>
     </div>
+    <script>
+      document.getElementById("continue-to-site").addEventListener("click", function() {
+        window.location.href = "https://www.zola.com/wedding/campgeorvin";
+      });
+
+      setTimeout(() => {
+        document.getElementById("continue-to-site").style.opacity = 1;
+      }, 1000);
+    </script>
   </body>
 </html>
